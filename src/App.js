@@ -9,6 +9,7 @@ import Modal from './components/UI/Modal/Modal';
 
 class App extends Component {
 
+  
   state = {
     currentPage: 1,
     openModal: false
