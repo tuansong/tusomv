@@ -1,0 +1,38 @@
+.Control {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.Control p {
+    display: inline-block;
+}
+
+.Control .Search-btn {
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.Control input {
+    position: relative;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    float: right;
+    margin-top: 10px;
+    border: 2px solid grey;
+    animation: toggle 1s;
+}
+
+@keyframes toggle {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

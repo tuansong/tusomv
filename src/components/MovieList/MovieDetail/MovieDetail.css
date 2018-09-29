@@ -1,0 +1,44 @@
+.movie-card {
+    width: 400px;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    top: 0;
+    margin: 20px;
+}
+
+.movie-card .movie-header {
+    position: relative;
+    height: 270px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.movie-card .movie-header .movie-rating {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    justify-content: space-between;
+    padding: 16px;
+    cursor: pointer
+}
+
+
+.movie-card .movie-header .movie-rating button {
+    background: transparent;
+    border: none;
+    color: white
+}
+
+.movie-card .movie-header .movie-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #01d277;
+    width: 100%;
+    background: rgba(8, 28, 36, 0.85)
+}
