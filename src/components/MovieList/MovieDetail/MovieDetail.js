@@ -12,9 +12,14 @@ class MovieDetail extends Component {
         liked: false,
     }
 
+    getDateFormat = (date) => {
+        let newDate = date.slice(8) + date.slice(4,7)+ date.slice(7, 8) + date.slice(0,4);
+        return newDate;
+    }
+
     render() {
         return (
-            <div className="movie-card">
+            <div className="movie-card" onClick={this.props.openModal}>
                 <Card className="shadow-sm rounded">
                     <div
                         className="movie-header"
@@ -31,11 +36,16 @@ class MovieDetail extends Component {
                             <h3>{this.props.title}</h3>
                         </div>
                     </div>
-                    <CardBody>
-                        <CardTitle>{this.props.title}</CardTitle>
-                        <CardSubtitle>Description:</CardSubtitle>
-                        <CardText>{this.props.overview}</CardText>
-                        <Button onClick={this.props.openModal}>View more</Button>
+                    <CardBody style={{height: '200px', overflowY: 'auto', paddingBottom: '0'}}>
+                        <CardText>
+                            <span className="desc">Story:</span> 
+                            {this.props.overview.length > 200 ? this.props.overview.slice(0, 200) + '...' : this.props.overview} 
+                            <a className="view-more"
+                                onClick={this.props.openModal}
+                                >View more
+                            </a>    
+                        </CardText>
+                        <div className="date">{this.getDateFormat(this.props.date)}</div>
                     </CardBody>
                 </Card>
             </div>

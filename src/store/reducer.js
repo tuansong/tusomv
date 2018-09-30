@@ -4,6 +4,14 @@ const initialState = {
     modalMovie: null,
 }
 
+const getDate = (date) => {
+    let dateArr = date.split('');
+    dateArr.splice(4, 1);
+    dateArr.splice(6, 1);
+    let result = dateArr.join('');
+    return parseInt(result);
+}
+
 const reducer = (state = initialState, action) => {
     let movies = state.movies;
     let sortedMovies;
@@ -25,10 +33,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 modalMovie: selectedMovie
             }
-        case 'SEARCH_MOVIE': 
+        case 'SEARCH_MOVIE':
             let input = action.data;
             let newMovies = [...state.cloneMovies];
-            let searchedMovies = newMovies.filter( 
+            let searchedMovies = newMovies.filter(
                 movie => movie.title.includes(input.charAt(0).toUpperCase() + input.slice(1))
             );
             return {
@@ -47,7 +55,8 @@ const reducer = (state = initialState, action) => {
                 movies: sortedMovies
             }
         case 'SORT_DATE':
-            sortedMovies = [...movies].sort((a, b) => a.popularity - b.popularity);
+            sortedMovies = [...movies].sort((a, b) => getDate(b.release_date) - getDate(a.release_date));
+            console.log(sortedMovies);
             return {
                 movies: sortedMovies
             }

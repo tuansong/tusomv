@@ -38,6 +38,7 @@
     height: 100%;
     padding: 15px;
     color: white;
+    overflow-y: auto;
 }
 
 .Modal .movie-info h1, h4 {

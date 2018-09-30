@@ -13,6 +13,7 @@ const movieList = (props) => {
                 title={movie.title}
                 overview={movie.overview}
                 rating={movie.vote_average}
+                date={movie.release_date}
                 openModal={() => props.openModal(i)} 
             />
             

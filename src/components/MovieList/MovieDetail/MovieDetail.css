@@ -7,6 +7,11 @@
     margin: 20px;
 }
 
+.movie-card:hover {
+    box-shadow: 5px 10px 18px #888888!important;
+    cursor: pointer;
+}
+
 .movie-card .movie-header {
     position: relative;
     height: 270px;
@@ -41,4 +46,27 @@
     color: #01d277;
     width: 100%;
     background: rgba(8, 28, 36, 0.85)
+}
+
+.card-subtitle {
+    text-align: left;
+}
+
+.desc {
+    font-weight: bold;
+    font-size: 105%;
+}
+
+.date {
+    float: right;
+    font-style: italic;
+    position: absolute;
+    bottom: 0;
+}
+
+.view-more {
+    text-decoration: underline !important;
+    color: rgb(158, 158, 226) !important;
+    font-style: italic;
+    cursor: pointer;
 }
